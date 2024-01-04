@@ -1,0 +1,275 @@
+
+/* 
+        For future use: ruined square background
+background:
+linear-gradient(135deg, #1e1e2480 21px, #92140c80 22px, #92140c80 24px, transparent 24px, transparent 67px, #92140c80 67px, #92140c80 69px, transparent 69px),
+linear-gradient(225deg, #1e1e2480 21px, #92140c80 22px, #92140c80 24px, transparent 24px, transparent 67px, #92140c80 67px, #92140c80 69px, transparent 69px)0 64px;
+background-size: 128px 128px;
+background-color: var(--black); */
+
+:root{
+    --black: #1e1e24;
+    --red: #92140c;
+    --off-white: #fff8f0;
+    --brown: #372c2c; 
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Libre Baskerville', serif;
+    color: black;
+    background-image: url("../images/black-polygon-with-red-edges-abstract-hd-wallpaper-1920x1080.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+p {
+   font-size: 20px;
+   line-height: 1.5;
+}
+header {
+    padding: 20px;
+    background-color: var(--black);
+    color:var(--off-white);
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    z-index: 2;
+    font-size: 50px;
+    border-right: 16px double var(--red);
+    border-left: 16px double var(--red);
+
+
+}
+
+
+header ul li{
+    list-style-type: none;
+    margin-right: 20px;
+    margin-left: 25px;
+    font-size: 30px;
+    float: right;
+}
+
+header a {
+    text-decoration: none;
+    color:var(--off-white);
+}
+
+
+#title-slot {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+
+#page-title{
+    flex: 1 0 0px;
+    font-size: 60px;
+    color:var(--red);
+    text-align: right;
+    padding: 10px 0;
+    margin-left: 400px;
+    margin-right: 50px;
+    text-shadow: 5px 0 10px var(--red);
+    font-family: 'Teko', sans-serif;
+    border-bottom: 5px solid var(--red);
+    border-top: 5px solid var(--red);
+
+}
+
+/* main body of text
+first layer of flex separates the three main areas of
+the page */
+main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: var(--off-white);
+}
+
+/* second layer of flex seperates headers to the left
+and content to the right */
+.page-block {
+    flex: 1 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    margin: 20px 100px 0px 0px;
+}
+
+.page-block h2 {
+    font-size: 40px;
+    padding-right: 15px;
+    max-width: 200px;
+    text-align: right;
+    font-weight: 700;
+    border-right: 4px solid var(--black);
+    flex: 1 0 0;
+    color: var(--black);
+}
+
+#intro {
+    flex: 4 0 0;
+    margin-left: 30px;
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+
+}
+
+#intro p{
+    
+    flex: 1 0 0px;
+    margin-left: 45px;
+    margin-bottom: 15px;
+    text-wrap: wrap;
+}
+#para-one {
+    flex: 1 0 0px;
+    padding:10px;   
+}
+#para-one p {
+    text-indent: 35px;
+}
+#para-one img {
+    float:left;
+    width: 400px;
+    height: 500px;
+    margin-right: 15px;
+    box-shadow: 5px 0 15px black;
+    border: 8px double var(--red); 
+}
+
+/* this is where it got compliated. several layers of flex
+justify content within projects. one separating the first
+project from the others, and one to keep the other projects
+justified to one another */
+#projects {
+    flex: 4 0 0;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin-left: 15px;
+}
+#first-project {
+    flex:1 0 auto;
+    position: relative;
+    border: 5px solid var(--red);
+    padding: 15px;
+    min-height: 400px;
+    min-width: 400px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 30px;
+    position: relative;
+    background-image: url("../images/digital-marketing-meeting.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* before and hover are used on both
+the first project and the par-card projects
+to create hover focus on image */
+#first-project::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: inherit;
+    height: inherit;
+    background: rgba(54, 54, 56, 0.3);
+    transition: all .3s linear;
+}
+#first-project:hover::before {
+    background: none;
+}
+#first-project:hover {
+    box-shadow: 0 5px 15px var(--red);
+}
+.project-title{
+    position: absolute;
+    bottom: 20px;
+    left:0;
+    padding: 20px 10px 20px 10px;
+    background-color: var(--off-white);
+    border: 4px solid var(--red);
+    border-left: 0px;
+    color: var(--black);
+}
+.bold-1 {
+    font-size: 25px;
+    font-weight: 400;
+}
+#p-container { 
+    margin-right: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.par-card {
+    flex: 1 0 0px;
+    border: 5px solid var(--red);
+    padding: 15px;
+    margin: 15px;
+    position: relative;
+    background-color: var(--off-white);
+    min-height: 200px;
+    min-width: 400px;
+}
+.par-card::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: inherit;
+    height: inherit;
+    background: rgba(54, 54, 56, 0.3);
+    transition: all .3s linear;
+}
+.par-card:hover::before {
+    background: none;
+}
+.par-card:hover {
+    box-shadow: 0 5px 15px var(--red);
+}
+#contact-info{
+    flex: 4 0 0px;
+    margin-bottom: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.links{
+    flex: 1 0 100px;
+    margin: 0 10px 0 30px;
+    font-size: 20px;
+    color: var(--red);
+}
+.fa-brands, .fa-solid{
+    font-size: 30px;
+}
+
+
